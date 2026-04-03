@@ -5,7 +5,7 @@ model = "mistral-large-latest"
 
 # ✅ Initialize client (THIS WAS MISSING)
 
-api_key = st.secrets["MISTRAL_API_KEY"]
+api_key = st.secrets.get["MISTRAL_API_KEY"]
 client = Mistral(api_key=api_key)
 
 # UI
