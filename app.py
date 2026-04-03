@@ -1,9 +1,11 @@
-
 import streamlit as st
-from mistralai.client import Mistral
+from mistralai import Mistral
 
-api_key = "ySNpbNwUdXVjoG2Hw1G6FaiPt3J6bZrZ"
+api_key = "your_api_key_here"
 model = "mistral-large-latest"
+
+# ✅ Initialize client (THIS WAS MISSING)
+client = Mistral(api_key=api_key)
 
 # UI
 st.title("Askme anything 🚀")
@@ -14,7 +16,7 @@ with st.form('my_form'):
 
 if submit:
     if not api_key:
-        st.error("Mistral API key not found. Please add your API key to Colab secrets as 'MISTRAL_API_KEY'.")
+        st.error("Mistral API key not found.")
     elif text.strip():
         with st.spinner("Thinking..."):
             st.write("Model loaded ✅")
