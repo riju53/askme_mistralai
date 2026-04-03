@@ -1,11 +1,9 @@
 import streamlit as st
 from mistralai import Mistral
 
+api_key = "ySNpbNwUdXVjoG2Hw1G6FaiPt3J6bZrZ"
 model = "mistral-large-latest"
 
-# ✅ Initialize client (THIS WAS MISSING)
-
-api_key = st.secrets.get["MISTRAL_API_KEY"]
 client = Mistral(api_key=api_key)
 
 # UI
